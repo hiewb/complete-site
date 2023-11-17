@@ -227,7 +227,7 @@ figure {
 /*Animating pet image!*/
 .pet-image img {
     height: auto;
-    max-width: 100%;
+    max-width: 70%;
     animation: bounce 2s infinite; 
 }
 
