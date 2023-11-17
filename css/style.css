@@ -38,6 +38,11 @@ nav a {
     font-family:'Trebuchet MS';
 }
 
+nav a#curpage{
+    font-style:italic;
+    text-decoration:underline;
+}
+
 title{
     text-align:center;
     font-size: 50px;
