@@ -1,3 +1,18 @@
+.pet-container {
+    grid-template-areas:
+        "image"
+        "info"
+        "photogallery";
+}
+
+p, li, figcaption {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.pet-info {
+    order: 1;
+}
+
 .dropdown {
     position: relative;
     display: inline-block;
@@ -41,7 +56,7 @@ nav a {
 nav a#curpage{
     font-style:italic;
     text-decoration:underline;
-}
+}   
 
 title{
     text-align:center;
@@ -160,12 +175,7 @@ body > a {
 
 .pet-container {
     display: grid;
-    grid-template-columns: 1fr 2fr;
     grid-gap: 20px;
-    grid-template-areas: 
-        "image info"
-        "gallery gallery"
-        "likes likes";
 }
 
 .pet-image {
@@ -196,15 +206,13 @@ body > a {
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
     width: 100%;
     grid-gap: 10px;
 }
 
 .gallery-r{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    width: 65%;
+    width: 30%;
     grid-gap: 10px;
 }
 
@@ -279,65 +287,44 @@ figure {
     }
 }
 
-/* Desktop Styling */
-@media screen and (min-width: 1025px) {
-
-    h2 {
-        font-size: 30px;
-        margin-left: 20px;
-        font-weight:bold;
-    }
-
-    h3 {
-        font-size: 25px;
-        margin-left: 20px;
-        font-weight:bold;
-    }
-
-    span, p {
-        line-height: 1.5;
-        font-size: 25px;
-    }
-
-    img {
-        margin: 20px;
-        max-width: 400px;
-        max-height: 600px;
-    }
-
-    ul {
-        margin-left: 20px;
-    }
-
-    li {
-        margin-top: 10px;
-        display: inline-block; /* Adjust list item display */
-        margin-left: 50px;
-        height:50px;
-        font-size: 20px; /* Increase font size for better clickability */
-    }
-
-    nav {
-        width: 95%;
-        border: 2px solid black;
-    }
-
-    body > a{
-        background-color: yellow;
-        padding: 5px;
-        margin: 20px;
-    }
-
-    #skip {
-        text-transform: uppercase;
-        position: absolute;
-        left:-500px;
-    }
-}
-
 /* Tablet View */
 @media screen and (min-width: 768px){
     /* Tablet Styles Go Here */
+
+    .pet-container {
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas:
+            "image info"
+            "photogallery photogallery"
+            "likes likes";
+    }
+    .gallery{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .gallery-r{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+        grid-gap: 10px;
+    }
+
+    .travel-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    figure {
+        display: flex;
+        flex-direction: row;
+    }
+
+    figcaption {
+        position: relative;
+        padding: 10px;
+        text-align: center;
+        margin-top: 10px;
+        flex:1
+    }
+
     body {
         font-size: 18px; /* larger font */
     }
@@ -381,5 +368,92 @@ figure {
     a {
         font-size: 24px; /* large font size for tablet links */
         padding: 10px;
+    }
+}
+
+/* Desktop Styling */
+@media screen and (min-width: 1025px) {
+
+    .pet-container {
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas:
+            "image info"
+            "photogallery photogallery"
+            "likes likes";
+    }
+
+    h2 {
+        font-size: 25px;
+        margin-left: 20px;
+        font-weight:bold;
+    }
+
+    h3 {
+        font-size: 20px;
+        margin-left: 20px;
+        font-weight:bold;
+    }
+
+    span, p {
+        line-height: 1.5;
+        font-size: 16px;
+    }
+
+    img {
+        margin: 20px;
+        max-width: 250px;
+        max-height: 350px;
+    }
+
+    ul {
+        margin-left: 20px;
+    }
+
+    li {
+        margin-top: 10px;
+        display: inline-block; /* Adjust list item display */
+        margin-left: 50px;
+        height:50px;
+        font-size: 18px; /* Increase font size for better clickability */
+    }
+
+    nav {
+        width: 95%;
+        border: 2px solid black;
+    }
+
+    body > a{
+        background-color: yellow;
+        padding: 5px;
+        margin: 20px;
+    }
+
+    #skip {
+        text-transform: uppercase;
+        position: absolute;
+        left:-500px;
+    }
+    .gallery{
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .travel-gallery {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    figure {
+        position: relative;
+        margin: 0;
+    }
+
+    figcaption {
+        position: relative;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 10px;
+        text-align: center;
     }
 }
